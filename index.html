@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device width inicial-scale=1.0">
+    <meta http-equiv="x-ua-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <title>Bulb</title>
+  </head>
+  <body>
+    <div class="light">
+        <h1> BULB ON OFF</h1> 
+    </div>
+  <div id="switch" class="switch onoff onoff-off">Off</div>
+  <div class="bulb-wrapper">
+    <img id="off" src="off.png">
+    <img id="on" style="display:none;" src="on.png">
+  </div>
+  <script>
+    var bulb_on = document.getElementById('on');
+    var bulb_off = document.getElementById('off');
+    var switch_btn = document.getElementById('switch');
+    
+    function toggleOnOff(){
+      if (window.getComputedStyle(bulb_on).display === "none") {
+        bulb_on.style.display = 'block';
+        bulb_off.style.display = 'none';
+        switch_btn.innerHTML = 'On';
+      }else{
+        bulb_on.style.display = 'none';
+        bulb_off.style.display = 'block';
+        switch_btn.innerHTML = 'Off';
+      }
+      toggleSwitch();
+    }
+    function toggleSwitch(){
+      switch_btn.classList.toggle("onoff-on");
+      switch_btn.classList.toggle("onoff-off");
+    }
+    switch_btn.addEventListener('click',function(){
+      toggleOnOff();
+    });
+  </script>
+   <footer>
+    <p>Copyright &copy; 2021 Web Design by Minarva</p>
+  </footer>
+  </body>
+</html>
